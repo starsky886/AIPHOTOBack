@@ -1,0 +1,24 @@
+name = "huehaven-api"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "huehaven-db"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "huehaven-media"
+
+[ai]
+binding = "AI"
+
+[vars]
+APP_ORIGIN = "http://localhost:8081"
+AI_MODEL = "@cf/qwen/qwen3-30b-a3b-fp8"
+# Production: set with `npx wrangler secret put REVENUECAT_WEBHOOK_SECRET`
+
+[triggers]
+crons = ["0 * * * *"]

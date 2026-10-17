@@ -1,0 +1,20 @@
+{
+  "name": "huehaven-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "format": "prettier --write src/**/*.ts README.md package.json",
+    "format:check": "prettier --check src/**/*.ts README.md package.json",
+    "db:migrate:local": "wrangler d1 migrations apply huehaven-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply huehaven-db --remote"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^5.20261014.1",
+    "wrangler": "^4.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10"
+  }
+}
